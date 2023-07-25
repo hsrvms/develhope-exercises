@@ -1,0 +1,128 @@
+:root {
+  --textActive-color: #f1f1f1;
+  --text-color: #c4c4c4;
+  --textDisabled-color: #8c8c8c;
+  --green-color: #179a1c;
+  --navBg-color: #1c221c;
+  --bg-color: #eaeaea;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+
+  position: relative;
+}
+
+/* NAVBAR */
+
+#navbar {
+  width: 100%;
+  /* padding: 1.5rem 1rem; */
+  background-color: var(--navBg-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+}
+
+.logo-box .logo {
+  font-size: 1.5rem;
+  color: var(--textActive-color);
+  margin: 1.5rem 1rem;
+
+  cursor: pointer;
+}
+
+.nav-list {
+  margin-right: auto;
+  margin-left: 2rem;
+
+  list-style: none;
+  font-size: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#dropdown {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background: none;
+  border: none;
+}
+
+.nav-list a.active {
+  color: var(--textActive-color);
+}
+
+.nav-list button {
+  font-size: 1.2rem;
+  color: var(--textDisabled-color);
+
+  background: none;
+  border: none;
+}
+
+.search-box {
+  /* border: 1px solid red; */
+  margin-right: 1rem;
+}
+
+.search-box input {
+  padding: 0.8rem 1rem;
+  margin-right: .5rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.search-box input::placeholder {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.search-box input:focus {
+  outline-color: var(--green-color);
+}
+
+.search-btn {
+  font-size: 1rem;
+  color: var(--green-color);
+
+  padding: 0.7rem 1rem;
+  background: none;
+  border: 1px solid var(--green-color);
+  border-radius: 0.3rem;
+
+  transition: background .3s ease, color .3s ease-in;
+
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: var(--green-color);
+  color: var(--textActive-color);
+  /* border-color: var(--textActive-color); */
+}
+
+
+/* NAVBAR */

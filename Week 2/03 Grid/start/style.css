@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+:root {
+  --displayBg-color: #494855;
+  --buttonsBorder-color: #8f8d9e;
+  --operatorsBg-color: #d3cee9;
+  --numbersBg-color: #f0eef7;
+  --resultButton-color: #ff4c79;
+  --bg-color: #fdffe5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+body {
+  display: relative;
+  background-color: var(--bg-color);
+}
+
+#calculator-app {
+  max-width: 450px;
+
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 10px rgba(56, 61, 56, .1);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#display {
+  height: 75px;
+  padding-right: .5rem;
+  background-color: var(--displayBg-color);
+  color: #f1f1f1;
+
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.grid-container div {
+  width: 75px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--buttonsBorder-color);
+}
+
+.operator {
+  background-color: var(--operatorsBg-color);
+}
+
+.result-button {
+  grid-column: 4 / 5;
+  grid-row: 2 / 6;
+  
+  padding: 101% 0;
+  background-color: var(--resultButton-color);
+  border-bottom-right-radius: 10px;
+}
+
+.number {
+  background-color: var(--numbersBg-color);
+}
+
+[value="0"] {
+  border-bottom-left-radius: 10px;
+}
+
+
+
+
+

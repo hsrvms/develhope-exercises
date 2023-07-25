@@ -1,0 +1,41 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+#green {
+  grid-row: 1 / 4;
+  grid-column: 1 / 13;
+}
+
+#yellow {
+  grid-row: 4 / 10;
+  grid-column: 1 / 5;
+}
+
+#yellow ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#orange {
+  grid-row: 10 / 13;
+  grid-column: 1 / 9;
+}
+
+#red {
+  grid-row: 4 / 10;
+  grid-column: 5 / 9;
+}
+
+#red ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#blue {
+  grid-row: 4 / 13;
+  grid-column: 9 / 13;
+}
+
