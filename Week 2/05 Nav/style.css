@@ -124,5 +124,36 @@ body {
   /* border-color: var(--textActive-color); */
 }
 
+.hamburger-menu {
+  display: none;
+
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 1px solid var(--green-color);
+
+  align-self: center;
+}
+
+.hamburger-menu .line {
+  background: var(--green-color);
+  height: 1px;
+  width: 80%;
+}
 
 /* NAVBAR */
+
+
+@media screen and (max-width: 768px) {
+  .nav-list, .search-box {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
