@@ -1,1 +1,44 @@
 
+body {
+  div {
+    border: 1px solid red;
+
+    display: flex;
+    flex-direction: column;
+    
+    h1 {
+      align-self: center;
+      color: green;
+      // text-decoration: underline;
+      border-bottom: 3px solid blue;
+    }
+
+    section {
+      display: flex;
+
+      padding: 1rem;
+
+      article {
+        border: 1px solid green;
+        text-align: center;
+        padding: .5rem;
+
+        &:nth-child(1) {
+          color: blue;
+        }
+
+        &:nth-child(2) {
+          color: red;
+        }
+
+        &:nth-child(3) {
+          color: blue;
+        }
+
+        &:nth-child(4) {
+          color: red;
+        }
+      }
+    }
+  }
+}

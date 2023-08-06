@@ -1,0 +1,33 @@
+body div {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+body div h1 {
+  align-self: center;
+  color: green;
+  border-bottom: 3px solid blue;
+}
+body div section {
+  display: flex;
+  padding: 1rem;
+}
+body div section article {
+  border: 1px solid green;
+  text-align: center;
+  padding: 0.5rem;
+}
+body div section article:nth-child(1) {
+  color: blue;
+}
+body div section article:nth-child(2) {
+  color: red;
+}
+body div section article:nth-child(3) {
+  color: blue;
+}
+body div section article:nth-child(4) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
