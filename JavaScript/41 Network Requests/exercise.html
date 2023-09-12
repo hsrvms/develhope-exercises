@@ -1,7 +1,7 @@
 <html>
   <body>
     <div id="container">
-      <form>
+      <form id="postForm">
         <div>
           <label>Title</label>
           <input type="text" id="todo-title" />
@@ -11,12 +11,46 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo"></button>
+        <button type="submit" id="submit-todo">Submit</button>
+        <div id="logContainer"></div>
       </form>
     </div>
   </body>
 </html>
 
 <script>
-  // code here
+  const formElement = document.getElementById("postForm");
+  const titleElement = document.getElementById("todo-title");
+  const completedElement = document.getElementById("todo-completed");
+  const logContainer = document.getElementById("logContainer");
+
+  formElement.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!completedElement.checked) return;
+
+    const title = titleElement.value;
+    const postData = {
+      userId: 125,
+      title: title,
+    };
+
+    const postedData = await post(url, postData);
+    const log = document.createElement('p');
+    log.innerHTML = `${JSON.stringify(postedData)}`
+    logContainer.appendChild(log);
+  });
+
+  const url = "https://jsonplaceholder.typicode.com/posts";
+
+  async function post(url, data = {}) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((response) => response.json());
+
+    return res;
+  }
 </script>
