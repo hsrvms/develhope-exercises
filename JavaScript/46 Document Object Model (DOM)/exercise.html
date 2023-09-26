@@ -36,6 +36,14 @@
 
 <script>
 	const inputs = document.querySelectorAll(".form-input");
-	console.log(inputs);
 	inputs.forEach((item) => console.log(item.value));
+	console.log("------------------------------");
+
+	const textInputs = document.querySelectorAll('input[type="text"]');
+	textInputs.forEach((item) => console.log(item.value));
+	console.log("------------------------------");
+
+	const numberInput = document.querySelector('input[type="number"]');
+	console.log(numberInput.value);
+	console.log("------------------------------");
 </script>
