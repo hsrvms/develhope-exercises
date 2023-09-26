@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Layout 3</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+
+	<body class="w-screen min-h-screen px-20 pt-10 flex flex-col items-center overflow-x-hidden">
+		<nav
+			id="navbar"
+			class="w-full max-w-7xl font-semibold px-10 py-5 shadow-md border rounded-md mb-10"
+		>
+			<div id="navLinks" class="flex gap-4">
+				<div id="linkBox">
+					<a href="#projects">Projects</a>
+				</div>
+				<div id="linkBox">
+					<a href="#about">About</a>
+				</div>
+				<div id="linkBox">
+					<a href="#contact">Contact</a>
+				</div>
+			</div>
+		</nav>
+
+		<main class="w-full max-w-7xl">
+			<section id="hero" class="flex justify-between pr-28">
+				<div id="heroContainer" class="w-1/3 flex flex-col gap-10">
+					<h1 class="text-5xl font-bold">
+						John Doe <span class="font-medium">web developer</span>
+					</h1>
+					<p class="text-sm font-semibold">
+						I'm a web developer with more then 10 years of
+						experience
+					</p>
+					<button class="bg-purple-600 text-white w-36 rounded-3xl py-0.5">Hire Me</button>
+					<div id="skillSetBox">
+						<ul class="flex gap-2">
+							<li class="bg-pink-400 text-white px-2 py-1 rounded-lg">HTML</li>
+							<li class="bg-orange-400 text-white px-2 py-1 rounded-lg">CSS</li>
+							<li class="bg-fuchsia-400 text-white px-2 py-1 rounded-lg">JavaScript</li>
+						</ul>
+					</div>
+				</div>
+				<div id="heroImg">
+					<img
+						src="./assets/image.png"
+						alt="profile-picture"
+						class="w-96"
+					/>
+				</div>
+			</section>
+
+			<section id="projects" class="w-full max-w-7xl">
+				<div id="projectsHeader" class="flex gap-4 mb-8">
+					<h2 class="text-xl font-bold">Latest Projects</h2>
+					<select id="projectsCategory" class="border rounded-md p-1 font-medium">
+						<option value="1">All</option>
+						<option value="2">MobileApp</option>
+						<option value="3">WebApp</option>
+					</select>
+				</div>
+				<div id="projectsCardContainer">
+					<ul id="cardList" class="flex justify-between px-2">
+						<li class="border rounded-md p-6 max-w-sm shadow-lg">
+							<h4 class="font-bold text-xl text-slate-700">Noteworthy technology acquisitions 2021</h4>
+							<p class="mt-2 font-medium text-base text-slate-500">
+								Here are the biggest enterprise technology
+								acquisitions of 2021 so far, in reverse
+								chronological order.
+							</p>
+						</li>
+						<li class="border rounded-md p-6 max-w-sm shadow-lg">
+							<h4 class="font-bold text-xl text-slate-700">Noteworthy technology acquisitions 2021</h4>
+							<p class="mt-2 font-medium text-base text-slate-500">
+								Here are the biggest enterprise technology
+								acquisitions of 2021 so far, in reverse
+								chronological order.
+							</p>
+						</li>
+						<li class="border rounded-md p-6 max-w-sm shadow-lg">
+							<h4 class="font-bold text-xl text-slate-700">Noteworthy technology acquisitions 2021</h4>
+							<p class="mt-2 font-medium text-base text-slate-500">
+								Here are the biggest enterprise technology
+								acquisitions of 2021 so far, in reverse
+								chronological order.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="contact" class="w-full max-w-7xl mt-12">
+				<div id="contactHeader" class="text-xl font-bold">
+					<h2>Subscribe to my newsletter</h2>
+				</div>
+				<div id="contactContainer" class="flex justify-between mt-8">
+					<p class="self-end font-medium">
+						I write about web development, design, and other cool
+						stuff.
+					</p>
+					<form class="">
+						<input
+							type="email"
+							id="emailInput"
+							placeholder="Your email"
+              class="indent-3 py-3 border rounded-md text-sm w-80 mr-4"
+						/>
+						<button class="bg-purple-600 text-white w-36 rounded-2xl h-full">Subscribe</button>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer class="w-full max-w-7xl flex justify-between mt-20 text-sm font-medium mb-4">
+			<div id="socialLinks" class="flex gap-4 ">
+				<a href="#">Linkedin</a>
+				<a href="#">GitHub</a>
+				<a href="#">Twitter</a>
+				<a href="#">Instagram</a>
+			</div>
+
+			<div id="copyright">&copy; 2023 John Doe</div>
+		</footer>
+	</body>
+</html>

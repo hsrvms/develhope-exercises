@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Layout 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+	</head>
+
+	<body>
+		<div class="flex gap-10 min-h-screen">
+      <section id="green" class="bg-green-200 basis-1/6 order-3 p-10">
+        <p>GREEN</p>
+      </section>
+      <section id="yellow" class="bg-yellow-200 basis-1/6 order-1 p-10">
+        <p class="text-center mb-4">YELLOW</p>
+        <ul class="flex flex-col items-center gap-4">
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">1</li>
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">2</li>
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">3</li>
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">4</li>
+        </ul>
+      </section>
+      <section id="orange" class="bg-orange-200 basis-3/6 order-4 p-10">
+        <p>ORANGE</p>
+      </section>
+      <section id="red" class="bg-red-200 basis-1/6 order-2 p-10">
+        <p class="text-center mb-4">RED</p>
+        <ul class="flex flex-col items-center gap-4">
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">A</li>
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">B</li>
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">C</li>
+          <li class="bg-white w-8 aspect-square flex justify-center items-center">D</li>
+        </ul>
+      </section>
+      <section id="blue" class="bg-blue-200 basis-1/6 order-5 p-10">
+        <p>BLUE</p>
+      </section>
+    </div>
+	</body>
+</html>
