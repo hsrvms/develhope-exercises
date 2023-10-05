@@ -1,13 +1,13 @@
 import Hello from "./components/Hello";
 
-//! 07 - Components
+//! 08 - Components
 
 const App = () => {
 	return (
-		<>
+		<div>
 			<Hello />
 			<Hello />
-		</>
+		</div>
 	);
 };
 
