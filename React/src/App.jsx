@@ -13,6 +13,3 @@ const App = () => {
 
 export default App;
 
-//! 10 - Components
-//? npm run dev command has written in the console;
-
