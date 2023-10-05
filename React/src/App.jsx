@@ -1,11 +1,16 @@
 import Hello from "./components/Hello";
+import Message from './components/Message'
 
-//! 13 - Components
-//? I can use as much components as I want in any other component. They are something like html tags but not the same thing. The only difference is Components contains JSX Expressions(html tags and javascript together)
+
+//! 14 - Components
+//? I can render any component in any other component. All I need to do is importing the component which I want to get;
 
 const App = () => {
 	return (
 		<div>
+      <Message />
+      <Message />
+      <Message />
 			<Hello />
 			<Hello />
 			<Hello />
