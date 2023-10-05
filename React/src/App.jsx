@@ -9,11 +9,15 @@ const App = () => {
 	}
 
   //! 03 - JSX 
-  //? If the name variable is not passed to the function, it returns undefined, like this: "<h1>Hello, undefined</h1>"
+  //? If the name variable is not passed to the function, it returns undefined as name, like this: "<h1>Hello, undefined</h1>"
+
+  //! 04 - JSX
+  //? If the name variable contains a JSX expression it returns object as name, like this: "<h1>Hello, [object Object]</h1>"
 
 	return (
 		<>
 			<h1>{hello}</h1>
+      <h2>{sayHello(<p>sdflkj</p>)}</h2>
 		</>
 	);
 };
