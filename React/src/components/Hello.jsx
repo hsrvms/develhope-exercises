@@ -1,6 +1,5 @@
 import Message from "./Message";
 
-//! 12 - Components
 
 function Hello() {
 	return (

@@ -1,4 +1,3 @@
-//! 12 - Components
 
 const Message = () => {
 	return (
