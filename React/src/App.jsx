@@ -3,7 +3,7 @@ const App = () => {
 	
 	function sayHello(name) {
 		
-		return `<h1>Hello, ${name}</h1>`;
+		return <h1>Hello, {name}</h1>;
 	}
 
   //! 04 - JSX
@@ -14,7 +14,7 @@ const App = () => {
 	return (
 		<>
 			<h1>{hello}</h1>
-      <h2>{sayHello(<p>JSX Expression</p>)}</h2>
+      			{sayHello('husrev')}
 		</>
 	);
 };
