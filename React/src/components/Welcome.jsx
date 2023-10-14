@@ -6,12 +6,12 @@ function Age({ age }) {
 	);
 }
 
-export default function Welcome({ name = "Orlando", age = 23 }) {
+export default function Welcome({ name = "Orlando", age}) {
 	return (
 		<>
 			<p>
 				Welcome, <strong>{name}!</strong>
-				{age > 18 && <Age age={age} />}
+				{age && <Age age={age} />}
 			</p>
 		</>
 	);
