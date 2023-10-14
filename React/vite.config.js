@@ -9,5 +9,3 @@ export default defineConfig({
 	},
 });
 
-
-//! 15 - Components
