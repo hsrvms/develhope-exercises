@@ -1,4 +1,4 @@
-export default function Welcome({ name }) {
+export default function Welcome({ name="Orlando" }) {
 
   return <p>Welcome, {name}!</p>
 
