@@ -7,11 +7,14 @@ function Age({ age }) {
 }
 
 export default function Welcome({ name = "Orlando", age}) {
+
+  const isValidAge = age > 18 && age < 65;
+
 	return (
 		<>
 			<p>
 				Welcome, <strong>{name}!</strong>
-				{age && <Age age={age} />}
+				{isValidAge && <Age age={age} />}
 			</p>
 		</>
 	);

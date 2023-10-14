@@ -8,7 +8,7 @@ const App = () => {
 		<div>
 			<Welcome name={"Husrev"} age={17}/>
 			<Welcome name={"Elrond"} age={29}/>
-			<Welcome />
+			<Welcome name={"Harmony"} age={85}/>
 		</div>
 	);
 };
