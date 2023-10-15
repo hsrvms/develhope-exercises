@@ -18,6 +18,7 @@ function AlertClock() {
 const App = () => {
 	return (
 		<div id="app">
+			{/* AlertClock has been already rendered in 26th exercise */}
 			<AlertClock />
 		</div>
 	);
