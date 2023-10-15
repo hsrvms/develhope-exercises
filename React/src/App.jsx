@@ -1,25 +1,18 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import "./App.css";
 
-function Clock() {
-
-	const [date, setDate] = useState(new Date()) 
-
-
-	useEffect(() => {
-		setInterval(() => {
-			setDate(new Date())
-		}, 1000)
-	}, [date])
-
-	return <h2>{date.toUTCString()}</h2>
+function MouseClicker() {
+	return (
+		<>
+			<button name="one" onClick={(e) => console.log(e.target.name)}>One</button>
+		</>
+	);
 }
-
 
 const App = () => {
 	return (
 		<div id="app">
-			<Clock />
+			<MouseClicker />
 		</div>
 	);
 };
