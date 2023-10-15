@@ -1,18 +1,26 @@
-import Welcome from './components/Welcome'
+import "./App.css";
 
-
-
-const App = () => {
+function AlertClock() {
+	function handleClick() {
+		const date = new Date(),
+			currentHour = date.getHours(),
+			currentMin = date.getMinutes();
+		window.alert(`Current Time: ${currentHour}:${currentMin}`);
+	}
 
 	return (
-		<div>
-			<Welcome name={"Husrev"} age={17}/>
-			<Welcome name={"Elrond"} age={29}/>
-			<Welcome name={"Harmony"} age={85}/>
-			<Welcome name={"John"} age={33}/>
+		<>
+			<button onClick={handleClick}>Click Me</button>
+		</>
+	);
+}
+
+const App = () => {
+	return (
+		<div id="app">
+			<AlertClock />
 		</div>
 	);
 };
 
 export default App;
-
