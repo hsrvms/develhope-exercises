@@ -19,9 +19,10 @@ body {
 }
 
 button {
+  padding: 1rem;
+  margin: 1rem;
   background: none;
   color: #f1f1f1;
-  padding: 1rem;
   border: 2px solid yellow;
   border-radius: 1rem;
 
