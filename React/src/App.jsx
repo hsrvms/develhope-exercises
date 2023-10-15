@@ -4,7 +4,9 @@ import "./App.css";
 function MouseClicker() {
 	return (
 		<>
-			<button name="one" onClick={(e) => console.log(e.target.name)}>One</button>
+			<button name="one" onClick={(e) => console.log(e.currentTarget.name)}>
+				<img width={24} height={24} />
+			</button>
 		</>
 	);
 }
