@@ -1,16 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 
-function Counter() {
-	const [counter, setCounter] = useState(0);
-
-	//! setter functions' parameters should be an immediate value because they need to assign that value to the state variable which is "counter" in this case. Every time I click the button the counter should increment 1 by 1, but I dont need to call a function for this again.
-	
+function Counter({ initialValue, incrementAmount }) {
+	const [counter, setCounter] = useState(initialValue);
 
 	return (
 		<div>
 			<h2>{counter}</h2>
-			<button onClick={() => setCounter(counter+1)}>Increment</button>
+			<button onClick={() => setCounter(counter + incrementAmount)}>
+				Increment
+			</button>
 		</div>
 	);
 }
@@ -18,7 +17,7 @@ function Counter() {
 const App = () => {
 	return (
 		<div id="app">
-			<Counter />
+			<Counter initialValue={2} incrementAmount={3} />
 		</div>
 	);
 };
