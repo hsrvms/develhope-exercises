@@ -1,6 +1,16 @@
 import "./App.css";
 
-function AlertClock() {
+function AlertClock({ clickHandler }) {
+	
+	return (
+		<>
+			<button onClick={clickHandler}>Click Me</button>
+		</>
+	);
+}
+
+const App = () => {
+
 	function handleClick() {
 		const date = new Date(),
 			currentHour = date.getHours(),
@@ -9,17 +19,8 @@ function AlertClock() {
 	}
 
 	return (
-		<>
-			<button onClick={handleClick}>Click Me</button>
-		</>
-	);
-}
-
-const App = () => {
-	return (
 		<div id="app">
-			{/* AlertClock has been already rendered in 26th exercise */}
-			<AlertClock />
+			<AlertClock clickHandler={handleClick}/>
 		</div>
 	);
 };
