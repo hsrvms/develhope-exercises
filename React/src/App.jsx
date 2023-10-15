@@ -1,26 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 
-function AlertClock({ clickHandler }) {
-	
+function Counter() {
+	const [counter, setCounter] = useState(0);
+
 	return (
-		<>
-			<button onClick={clickHandler}>Click Me</button>
-		</>
+		<div>
+			<h2>{counter}</h2>
+			<button onClick={() => setCounter(counter+1)}>Increment</button>
+		</div>
 	);
 }
 
 const App = () => {
-
-	function handleClick() {
-		const date = new Date(),
-			currentHour = date.getHours(),
-			currentMin = date.getMinutes();
-		window.alert(`Current Time: ${currentHour}:${currentMin}`);
-	}
-
 	return (
 		<div id="app">
-			<AlertClock clickHandler={handleClick}/>
+			<Counter />
 		</div>
 	);
 };
