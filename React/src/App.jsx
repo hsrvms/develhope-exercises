@@ -5,14 +5,20 @@ function CounterDisplay({ counter }) {
 	return <h2>{counter}</h2>
 }
 
-function Counter({ initialValue, incrementAmount }) {
+function Counter({ initialValue, amount }) {
 	const [counter, setCounter] = useState(initialValue);
 
 	return (
 		<div>
 			<CounterDisplay counter={counter}/>
-			<button onClick={() => setCounter(counter + incrementAmount)}>
+			<button onClick={() => setCounter(counter + amount)}>
 				Increment
+			</button>
+			<button onClick={() => setCounter(counter - amount)}>
+				Decrement
+			</button>
+			<button onClick={() => setCounter(initialValue)}>
+				Reset
 			</button>
 		</div>
 	);
@@ -21,7 +27,7 @@ function Counter({ initialValue, incrementAmount }) {
 const App = () => {
 	return (
 		<div id="app">
-			<Counter initialValue={2} incrementAmount={3} />
+			<Counter initialValue={2} amount={3} />
 		</div>
 	);
 };
