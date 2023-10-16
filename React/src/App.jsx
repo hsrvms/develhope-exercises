@@ -1,30 +1,30 @@
-// import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
-function MultiButton() {
-	function handleClick(e) {
-		console.log(e.target.name);
+function Welcome({ name }) {
+	return <h3>Welcome, {name}</h3>
+}
+
+function InteractiveWelcome({value, onChange}) {
+	return (
+		<div>
+			<input type="text" value={value} onChange={onChange}/>
+			<Welcome name={value}/>
+		</div>
+	)
+}
+
+
+const App = () => {
+
+	const [nameInput, setNameInput] = useState('')
+	function handleChange(e) {
+		setNameInput(e.target.value)
 	}
 
 	return (
-		<div>
-			<button name="one" onClick={handleClick}>
-				One
-			</button>
-			<button name="two" onClick={handleClick}>
-				Two
-			</button>
-			<button name="three" onClick={handleClick}>
-				Three
-			</button>
-		</div>
-	);
-}
-
-const App = () => {
-	return (
 		<div id="app">
-			<MultiButton />
+			<InteractiveWelcome value={nameInput} onChange={handleChange}/>
 		</div>
 	);
 };
