@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-function Login({ formData, onChange, onLogin }) {
+function Login({ formData, onChange, onLogin, onReset }) {
 	return (
 		<div>
 			<div>
@@ -27,11 +27,17 @@ function Login({ formData, onChange, onLogin }) {
 				<input
 					type="checkbox"
 					name="remember"
-					checked={formData.checked}
+					checked={formData.remember}
 					onChange={onChange}
 				/>
 			</div>
-			<button disabled={formData.username === '' || formData.password === ''} onClick={onLogin}>Submit</button>
+			<button
+				disabled={formData.username === "" || formData.password === ""}
+				onClick={onLogin}
+			>
+				Submit
+			</button>
+			<button onClick={onReset}>Reset</button>
 		</div>
 	);
 }
@@ -44,7 +50,15 @@ const App = () => {
 	});
 
 	function onLogin() {
-		console.log('Login Attempt')
+		console.log("Login Attempt");
+	}
+
+	function handleReset() {
+		setFormData({
+			username: "",
+			password: "",
+			remember: false,
+		});
 	}
 
 	function handleChange(e) {
@@ -52,23 +66,23 @@ const App = () => {
 		console.log(type, name, checked);
 
 		setFormData((formData) => {
-			if (type === "checkbox") {
+		
 				return {
 					...formData,
-					[name]: checked,
+					[name]: type === 'checkbox' ? checked : value,
 				};
-			} else {
-				return {
-					...formData,
-					[name]: value,
-				};
-			}
+			
 		});
 	}
 
 	return (
 		<div id="app">
-			<Login formData={formData} onChange={handleChange} onLogin={onLogin}/>
+			<Login
+				formData={formData}
+				onChange={handleChange}
+				onLogin={onLogin}
+				onReset={handleReset}
+			/>
 		</div>
 	);
 };
