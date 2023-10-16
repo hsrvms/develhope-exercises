@@ -3,7 +3,7 @@ import "./App.css";
 
 function Login({ formData, onChange, onLogin, onReset }) {
 	return (
-		<div>
+		<form onSubmit={onLogin}>
 			<div>
 				<label htmlFor="username">Username:</label>
 				<input
@@ -33,12 +33,12 @@ function Login({ formData, onChange, onLogin, onReset }) {
 			</div>
 			<button
 				disabled={formData.username === "" || formData.password === ""}
-				onClick={onLogin}
+				type="submit"
 			>
 				Submit
 			</button>
 			<button onClick={onReset}>Reset</button>
-		</div>
+		</form>
 	);
 }
 
@@ -49,7 +49,8 @@ const App = () => {
 		remember: false,
 	});
 
-	function onLogin() {
+	function onLogin(e) {
+		e.preventDefault();
 		console.log("Login Attempt");
 	}
 
@@ -66,12 +67,10 @@ const App = () => {
 		console.log(type, name, checked);
 
 		setFormData((formData) => {
-		
-				return {
-					...formData,
-					[name]: type === 'checkbox' ? checked : value,
-				};
-			
+			return {
+				...formData,
+				[name]: type === "checkbox" ? checked : value,
+			};
 		});
 	}
 
