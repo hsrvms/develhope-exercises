@@ -1,30 +1,69 @@
 import { useState } from "react";
 import "./App.css";
 
-function Welcome({ name }) {
-	return <h3>Welcome, {name}</h3>
-}
-
-function InteractiveWelcome({value, onChange}) {
+function Login({ formData, onChange }) {
 	return (
 		<div>
-			<input type="text" value={value} onChange={onChange}/>
-			<Welcome name={value}/>
+			<div>
+				<label htmlFor="username">Username:</label>
+				<input
+					type="text"
+					name="username"
+					value={formData.username}
+					onChange={onChange}
+				/>
+			</div>
+			<div>
+				<label htmlFor="password">Password:</label>
+				<input
+					type="password"
+					name="password"
+					value={formData.password}
+					onChange={onChange}
+				/>
+			</div>
+			<div>
+				<label htmlFor="remember">Remember:</label>
+				<input
+					type="checkbox"
+					name="remember"
+					checked={formData.checked}
+					onChange={onChange}
+				/>
+			</div>
 		</div>
-	)
+	);
 }
 
-
 const App = () => {
+	const [formData, setFormData] = useState({
+		username: "",
+		password: "",
+		remember: false,
+	});
 
-	const [nameInput, setNameInput] = useState('')
 	function handleChange(e) {
-		setNameInput(e.target.value)
+		const { type, name, checked, value } = e.target;
+		console.log(type, name, checked);
+
+		setFormData((formData) => {
+			if (type === "checkbox") {
+				return {
+					...formData,
+					[name]: checked,
+				};
+			} else {
+				return {
+					...formData,
+					[name]: value,
+				};
+			}
+		});
 	}
 
 	return (
 		<div id="app">
-			<InteractiveWelcome value={nameInput} onChange={handleChange}/>
+			<Login formData={formData} onChange={handleChange} />
 		</div>
 	);
 };
