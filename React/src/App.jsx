@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-function Login({ formData, onChange }) {
+function Login({ formData, onChange, onLogin }) {
 	return (
 		<div>
 			<div>
@@ -31,6 +31,7 @@ function Login({ formData, onChange }) {
 					onChange={onChange}
 				/>
 			</div>
+			<button disabled={formData.username === '' || formData.password === ''} onClick={onLogin}>Submit</button>
 		</div>
 	);
 }
@@ -41,6 +42,10 @@ const App = () => {
 		password: "",
 		remember: false,
 	});
+
+	function onLogin() {
+		console.log('Login Attempt')
+	}
 
 	function handleChange(e) {
 		const { type, name, checked, value } = e.target;
@@ -63,7 +68,7 @@ const App = () => {
 
 	return (
 		<div id="app">
-			<Login formData={formData} onChange={handleChange} />
+			<Login formData={formData} onChange={handleChange} onLogin={onLogin}/>
 		</div>
 	);
 };
