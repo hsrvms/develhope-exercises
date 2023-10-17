@@ -1,10 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 
-// ! Current username and password can be accessed via onChange events.
-
 function Login() {
-	const [formData, setFormData] = useState({
+	const [data, setData] = useState({
 		username: "",
 		password: "",
 		remember: "",
@@ -13,8 +11,11 @@ function Login() {
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		console.log(formData);
-		setFormData({
+		// ! The built in javascript object which is FormData should be used in this case. 
+		const formData = new FormData(e.target)
+
+		console.log(formData.get('username'));
+		setData({
 			username: "",
 			password: "",
 			remember: "",
@@ -22,7 +23,7 @@ function Login() {
 	}
 
 	function handleReset() {
-		setFormData({
+		setData({
 			username: "",
 			password: "",
 			remember: "",
@@ -33,8 +34,8 @@ function Login() {
 		const { name, value, type, checked } = e.target;
 		console.log(name);
 
-		setFormData({
-			...formData,
+		setData({
+			...data,
 			[name]: type === "checkbox" ? checked : value,
 		});
 	}
@@ -47,7 +48,7 @@ function Login() {
 				<input
 					type="text"
 					name="username"
-					value={formData.username}
+					value={data.username}
 					onChange={handleChange}
 				/>
 			</div>
@@ -56,7 +57,7 @@ function Login() {
 				<input
 					type="password"
 					name="password"
-					value={formData.password}
+					value={data.password}
 					onChange={handleChange}
 				/>
 			</div>
@@ -65,12 +66,12 @@ function Login() {
 				<input
 					type="checkbox"
 					name="remember"
-					checked={formData.remember}
+					checked={data.remember}
 					onChange={handleChange}
 				/>
 			</div>
 			<button
-				disabled={formData.username === "" || formData.password === ""}
+				disabled={data.username === "" || data.password === ""}
 				type="submit"
 			>
 				Submit
