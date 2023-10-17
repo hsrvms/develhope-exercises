@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 
+// ! Current username and password can be accessed via onChange events.
+
 function Login() {
 	const [formData, setFormData] = useState({
 		username: "",
