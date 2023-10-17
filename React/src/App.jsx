@@ -11,10 +11,16 @@ function Login() {
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		// ! The built in javascript object which is FormData should be used in this case. 
 		const formData = new FormData(e.target)
 
-		console.log(formData.get('username'));
+		const displayData = {
+			username: formData.get('username'),
+			password: formData.get('password'),
+			remember: formData.get('remember') === 'on' ? true : false,
+		}
+
+		console.log(displayData, formData.get('remember'));
+
 		setData({
 			username: "",
 			password: "",
