@@ -1,16 +1,52 @@
 import { useState } from "react";
 import "./App.css";
 
-function Login({ formData, onChange, onLogin, onReset }) {
+function Login() {
+	const [formData, setFormData] = useState({
+		username: "",
+		password: "",
+		remember: "",
+	});
+
+	function handleSubmit(e) {
+		e.preventDefault();
+
+		console.log(formData);
+		setFormData({
+			username: "",
+			password: "",
+			remember: "",
+		});
+	}
+
+	function handleReset() {
+		setFormData({
+			username: "",
+			password: "",
+			remember: "",
+		});
+	}
+
+	function handleChange(e) {
+		const { name, value, type, checked } = e.target;
+		console.log(name);
+
+		setFormData({
+			...formData,
+			[name]: type === "checkbox" ? checked : value,
+		});
+	}
+
+
 	return (
-		<form onSubmit={onLogin}>
+		<form onSubmit={handleSubmit}>
 			<div>
 				<label htmlFor="username">Username:</label>
 				<input
 					type="text"
 					name="username"
 					value={formData.username}
-					onChange={onChange}
+					onChange={handleChange}
 				/>
 			</div>
 			<div>
@@ -19,7 +55,7 @@ function Login({ formData, onChange, onLogin, onReset }) {
 					type="password"
 					name="password"
 					value={formData.password}
-					onChange={onChange}
+					onChange={handleChange}
 				/>
 			</div>
 			<div>
@@ -28,7 +64,7 @@ function Login({ formData, onChange, onLogin, onReset }) {
 					type="checkbox"
 					name="remember"
 					checked={formData.remember}
-					onChange={onChange}
+					onChange={handleChange}
 				/>
 			</div>
 			<button
@@ -37,51 +73,15 @@ function Login({ formData, onChange, onLogin, onReset }) {
 			>
 				Submit
 			</button>
-			<button onClick={onReset}>Reset</button>
+			<button onClick={handleReset}>Reset</button>
 		</form>
 	);
 }
 
 const App = () => {
-	const [formData, setFormData] = useState({
-		username: "",
-		password: "",
-		remember: false,
-	});
-
-	function onLogin(e) {
-		e.preventDefault();
-		console.log("Login Attempt");
-	}
-
-	function handleReset() {
-		setFormData({
-			username: "",
-			password: "",
-			remember: false,
-		});
-	}
-
-	function handleChange(e) {
-		const { type, name, checked, value } = e.target;
-		console.log(type, name, checked);
-
-		setFormData((formData) => {
-			return {
-				...formData,
-				[name]: type === "checkbox" ? checked : value,
-			};
-		});
-	}
-
 	return (
 		<div id="app">
-			<Login
-				formData={formData}
-				onChange={handleChange}
-				onLogin={onLogin}
-				onReset={handleReset}
-			/>
+			<Login />
 		</div>
 	);
 };
