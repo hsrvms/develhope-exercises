@@ -1,27 +1,22 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
 
-function FocusableInput() {
-	const inputRef = useRef(null);
+function Component() {
+	const isMountedRef = useRef(null);
 
 	useEffect(() => {
-		console.log(inputRef, inputRef.current)
-		if (inputRef.current) {
-			inputRef.current.focus();
-		}
+		isMountedRef.current = true;
 	}, []);
 
-	return (
-		<div>
-			<input type="text" placeholder="focusedText" ref={inputRef}/>
-		</div>
-	);
+	console.log(isMountedRef);
+
+	return <h3>Component</h3>;
 }
 
 const App = () => {
 	return (
 		<div id="app">
-			<FocusableInput />
+			<Component />
 		</div>
 	);
 };
