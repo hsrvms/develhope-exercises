@@ -1,40 +1,47 @@
+import { useState } from "react";
+
 import "./App.css";
 
-function Color({ item }) {
+function TodoList({items, inputValue, handleChange, handleSubmit}) {
 	return (
-		<li
-			style={{
-				backgroundColor: item.color,
-				width: "20rem",
-				marginTop: "1rem",
-				height: "2rem",
-			}}
-		>
-			{item.name}
-		</li>
+		<div>
+			<ul>
+				{items.map((item) => <li key={item}>{item}</li>)}
+			</ul>
+			<form onSubmit={handleSubmit}>
+				<input type="text" value={inputValue} onChange={handleChange}/>
+				<button type="submit">Add</button>
+			</form>
+		</div>
 	);
 }
 
-function Colors({ items }) {
-	const itemElements = items.map((item) => (
-		<Color key={item.id} item={item} />
-	));
-
-	return <ul>{itemElements}</ul>;
-}
-
 const App = () => {
-	const items = [
-		{ color: "#FF5733", name: "Red", id: 1 },
-		{ color: "#3498DB", name: "Blue", id: 2 },
-		{ color: "#2ECC71", name: "Green", id: 3 },
-		{ color: "#F1C40F", name: "Yellow", id: 4 },
-		{ color: "#FFA726", name: "Orange", id: 5 },
-	];
+	const [items, setItems] = useState([
+		"Red",
+		"Blue",
+		"Green",
+		"Yellow",
+		"Orange",
+	]);
+	const [inputValue, setInputValue] = useState('');
+
+	function handleSubmit(event) {
+		event.preventDefault()
+		setItems((prevItems) => {
+			return [...prevItems, inputValue]
+		});
+		setInputValue('')
+	}
+
+	function handleChange(event) {
+		const value = event.target.value;
+		setInputValue(value);
+	}
 
 	return (
 		<div id="app">
-			<Colors items={items} />
+			<TodoList items={items} handleSubmit={handleSubmit} inputValue={inputValue} handleChange={handleChange}/>
 		</div>
 	);
 };
