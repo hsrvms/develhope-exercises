@@ -1,10 +1,8 @@
-import { useState, useRef } from "react";
 import "./App.css";
 
-function Colors({ items }) {
-	const itemElements = items.map((item) => (
+function Color({ item }) {
+	return (
 		<li
-			key={item.id}
 			style={{
 				backgroundColor: item.color,
 				width: "20rem",
@@ -14,6 +12,12 @@ function Colors({ items }) {
 		>
 			{item.name}
 		</li>
+	);
+}
+
+function Colors({ items }) {
+	const itemElements = items.map((item) => (
+		<Color key={item.id} item={item} />
 	));
 
 	return <ul>{itemElements}</ul>;
@@ -21,11 +25,11 @@ function Colors({ items }) {
 
 const App = () => {
 	const items = [
-		{ color: '#FF5733', name: 'Red', id: 1 },
-		{ color: '#3498DB', name: 'Blue', id: 2 },
-		{ color: '#2ECC71', name: 'Green', id: 3 },
-		{ color: '#F1C40F', name: 'Yellow', id: 4 },
-		{ color: '#FFA726', name: 'Orange', id: 5 }
+		{ color: "#FF5733", name: "Red", id: 1 },
+		{ color: "#3498DB", name: "Blue", id: 2 },
+		{ color: "#2ECC71", name: "Green", id: 3 },
+		{ color: "#F1C40F", name: "Yellow", id: 4 },
+		{ color: "#FFA726", name: "Orange", id: 5 },
 	];
 
 	return (
