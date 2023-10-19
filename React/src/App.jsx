@@ -4,16 +4,15 @@ import "./App.css";
 function Colors({ items }) {
 	const itemElements = items.map((item) => (
 		<li
-			key={item}
+			key={item.id}
 			style={{
-				backgroundColor: item,
-				border: "1px solid red",
+				backgroundColor: item.color,
 				width: "20rem",
 				marginTop: "1rem",
 				height: "2rem",
 			}}
 		>
-			{item}
+			{item.name}
 		</li>
 	));
 
@@ -21,7 +20,13 @@ function Colors({ items }) {
 }
 
 const App = () => {
-	const items = ["#fff333", "#252fff", "#010998", "#f99999", "#385943"];
+	const items = [
+		{ color: '#FF5733', name: 'Red', id: 1 },
+		{ color: '#3498DB', name: 'Blue', id: 2 },
+		{ color: '#2ECC71', name: 'Green', id: 3 },
+		{ color: '#F1C40F', name: 'Yellow', id: 4 },
+		{ color: '#FFA726', name: 'Orange', id: 5 }
+	];
 
 	return (
 		<div id="app">
