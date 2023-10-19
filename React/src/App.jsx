@@ -1,35 +1,31 @@
 import { useState, useRef } from "react";
 import "./App.css";
 
-function Counter({ count, handleClick }) {
-	return (
-		<div>
-			<h3>{count}</h3>
-			<button name="decrease" onClick={handleClick}>
-				-
-			</button>
-			<button name="increase" onClick={handleClick}>
-				+
-			</button>
-		</div>
-	);
+function Colors({ items }) {
+	const itemElements = items.map((item) => (
+		<li
+			key={item}
+			style={{
+				backgroundColor: item,
+				border: "1px solid red",
+				width: "20rem",
+				marginTop: "1rem",
+				height: "2rem",
+			}}
+		>
+			{item}
+		</li>
+	));
+
+	return <ul>{itemElements}</ul>;
 }
 
 const App = () => {
-	const eventRef = useRef(null);
-	console.log(eventRef)
-	const [count, setCount] = useState(0);
-	function handleClick(event) {
-		const btn = event.target.name;
-		setCount((prevCount) => {
-			return btn === "decrease" ? prevCount - 1 : prevCount + 1;
-		});
-		eventRef.current = btn === "decrease" ? "down" : "up";
-	}
+	const items = ["#fff333", "#252fff", "#010998", "#f99999", "#385943"];
 
 	return (
 		<div id="app">
-			<Counter handleClick={handleClick} count={count} />
+			<Colors items={items} />
 		</div>
 	);
 };
