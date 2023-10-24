@@ -33,3 +33,7 @@ button[disabled] {
   background: gray;
   border: 1px solid white;
 }
+
+ul {
+  list-style: none;
+}

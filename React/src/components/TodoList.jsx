@@ -1,4 +1,4 @@
-const TodoList = ({items, inputValue, handleChange, handleSubmit}) => {
+const TodoList = ({items, inputValue, handleChange, handleReset, handleSubmit}) => {
 	return (
 		<div>
 			<ul>
@@ -7,6 +7,7 @@ const TodoList = ({items, inputValue, handleChange, handleSubmit}) => {
 			<form onSubmit={handleSubmit}>
 				<input type="text" value={inputValue} onChange={handleChange}/>
 				<button type="submit">Add</button>
+        <button onClick={handleReset}>Reset List</button>
 			</form>
 		</div>
 	);

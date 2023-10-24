@@ -28,9 +28,14 @@ const App = () => {
 		setInputValue(value);
 	}
 
+	function handleReset() {
+		setInputValue('')
+		setItems([]);
+	}
+
 	return (
 		<div id="app">
-			<TodoList items={items} handleSubmit={handleSubmit} inputValue={inputValue} handleChange={handleChange}/>
+			<TodoList items={items} handleSubmit={handleSubmit} handleReset={handleReset} inputValue={inputValue} handleChange={handleChange}/>
 		</div>
 	);
 };
