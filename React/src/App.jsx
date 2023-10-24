@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import Login from "./components/Login";
 import Clock from './components/Clock/Clock'
 import TodoList from "./components/TodoList/TodoList";
+import UncontrolledLogin from './components/UncontrolledLogin'
 
 import "./App.css";
 
@@ -50,6 +51,8 @@ const App = () => {
 			<Counter />
 			<Login />
 			<Clock />
+			<UncontrolledLogin />
+			<h1 className="text-exl">Hello</h1>
 			<TodoList
 				items={items}
 				handleSubmit={handleSubmit}
