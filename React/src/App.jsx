@@ -1,20 +1,9 @@
 import { useState } from "react";
+import TodoList from './components/TodoList'
 
 import "./App.css";
 
-function TodoList({items, inputValue, handleChange, handleSubmit}) {
-	return (
-		<div>
-			<ul>
-				{items.map((item) => <li key={item}>{item}</li>)}
-			</ul>
-			<form onSubmit={handleSubmit}>
-				<input type="text" value={inputValue} onChange={handleChange}/>
-				<button type="submit">Add</button>
-			</form>
-		</div>
-	);
-}
+
 
 const App = () => {
 	const [items, setItems] = useState([
