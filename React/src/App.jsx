@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Welcome from './components/Welcome'
 import TodoList from "./components/TodoList";
 
 import "./App.css";
@@ -42,6 +43,7 @@ const App = () => {
 
 	return (
 		<div id="app">
+			<Welcome />
 			<TodoList
 				items={items}
 				handleSubmit={handleSubmit}
