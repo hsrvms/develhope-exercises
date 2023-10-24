@@ -3,7 +3,7 @@ import Welcome from "./components/Welcome";
 import Counter from "./components/Counter";
 import Login from "./components/Login";
 import Clock from './components/Clock/Clock'
-import TodoList from "./components/TodoList";
+import TodoList from "./components/TodoList/TodoList";
 
 import "./App.css";
 

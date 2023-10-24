@@ -1,7 +1,9 @@
+import './TodoList.css'
+
 const TodoList = ({items, inputValue, handleChange, handleReset, handleSubmit, handleDelete}) => {
 	return (
-		<div>
-			<ul>
+		<div className="list-container">
+			<ul className="list">
 				{items.length > 0 && items.map((item) => (
           <li key={item}>
             {item}
