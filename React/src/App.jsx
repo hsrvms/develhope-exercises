@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Welcome from "./components/Welcome";
 import Counter from "./components/Counter";
-import Login from "./components/Login.jsx";
+import Login from "./components/Login";
+import Clock from './components/Clock/Clock'
 import TodoList from "./components/TodoList";
 
 import "./App.css";
@@ -48,6 +49,7 @@ const App = () => {
 			<Welcome />
 			<Counter />
 			<Login />
+			<Clock />
 			<TodoList
 				items={items}
 				handleSubmit={handleSubmit}
