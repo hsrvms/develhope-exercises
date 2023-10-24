@@ -1,9 +1,7 @@
 import { useState } from "react";
-import TodoList from './components/TodoList'
+import TodoList from "./components/TodoList";
 
 import "./App.css";
-
-
 
 const App = () => {
 	const [items, setItems] = useState([
@@ -13,14 +11,15 @@ const App = () => {
 		"Yellow",
 		"Orange",
 	]);
-	const [inputValue, setInputValue] = useState('');
+	const [inputValue, setInputValue] = useState("");
 
 	function handleSubmit(event) {
-		event.preventDefault()
+		event.preventDefault();
+		if (!inputValue) return;
 		setItems((prevItems) => {
-			return [...prevItems, inputValue]
+			return [...prevItems, inputValue];
 		});
-		setInputValue('')
+		setInputValue("");
 	}
 
 	function handleChange(event) {
@@ -29,13 +28,28 @@ const App = () => {
 	}
 
 	function handleReset() {
-		setInputValue('')
+		setInputValue("");
 		setItems([]);
+	}
+
+	function handleDelete(e) {
+		const element = e.target.dataset.color;
+		setItems(prevItems => {
+			const newItems = prevItems.filter(item => item !== element);
+			return newItems;
+		})
 	}
 
 	return (
 		<div id="app">
-			<TodoList items={items} handleSubmit={handleSubmit} handleReset={handleReset} inputValue={inputValue} handleChange={handleChange}/>
+			<TodoList
+				items={items}
+				handleSubmit={handleSubmit}
+				handleReset={handleReset}
+				inputValue={inputValue}
+				handleChange={handleChange}
+				handleDelete={handleDelete}
+			/>
 		</div>
 	);
 };
