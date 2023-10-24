@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Welcome from "./components/Welcome";
 import Counter from "./components/Counter";
+import Login from "./components/Login.jsx";
 import TodoList from "./components/TodoList";
 
 import "./App.css";
@@ -46,6 +47,7 @@ const App = () => {
 		<div id="app">
 			<Welcome />
 			<Counter />
+			<Login />
 			<TodoList
 				items={items}
 				handleSubmit={handleSubmit}
