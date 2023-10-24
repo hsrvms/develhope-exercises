@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Welcome from './components/Welcome'
+import Welcome from "./components/Welcome";
+import Counter from "./components/Counter";
 import TodoList from "./components/TodoList";
 
 import "./App.css";
@@ -35,15 +36,16 @@ const App = () => {
 
 	function handleDelete(e) {
 		const element = e.target.dataset.color;
-		setItems(prevItems => {
-			const newItems = prevItems.filter(item => item !== element);
+		setItems((prevItems) => {
+			const newItems = prevItems.filter((item) => item !== element);
 			return newItems;
-		})
+		});
 	}
 
 	return (
 		<div id="app">
 			<Welcome />
+			<Counter />
 			<TodoList
 				items={items}
 				handleSubmit={handleSubmit}
