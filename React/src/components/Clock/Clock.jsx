@@ -9,8 +9,9 @@ const Clock = () => {
 
   return (
     <div className="clock">
+      <div>{language === 'en' ? 'Current Time' : 'Simdiki Zaman'}</div>
       <div>Clock</div>
-      <div>{language}</div>
+      <br />
     </div>
   )
 }
