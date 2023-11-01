@@ -62,7 +62,7 @@ const App = () => {
 				handleChange={handleChange}
 				handleDelete={handleDelete}
 			/>
-			<Container title="Hello World!">
+			<Container title="Colapsible">
 				<Counter />
 			</Container>
 		</div>
