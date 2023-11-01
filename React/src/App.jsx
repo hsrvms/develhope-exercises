@@ -68,6 +68,11 @@ const App = () => {
 				<Counter />
 			</Container>
 
+			<div>
+				<button onClick={() => setLanguage('en')}>English</button>
+				<button onClick={() => setLanguage('tr')}>Turkish</button>
+			</div>
+
 			<LanguageContext.Provider value={language}>
 				<Clock />
 			</LanguageContext.Provider>
