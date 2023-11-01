@@ -21,6 +21,8 @@ const App = () => {
 	const [inputValue, setInputValue] = useState("");
 	const [language, setLanguage] = useState('en')
 
+	console.log(language)
+
 	function handleSubmit(event) {
 		event.preventDefault();
 		if (!inputValue) return;
@@ -73,9 +75,7 @@ const App = () => {
 				<button onClick={() => setLanguage('tr')}>Turkish</button>
 			</div>
 
-			<LanguageContext.Provider value={language}>
 				<Clock />
-			</LanguageContext.Provider>
 		</div>
 	);
 };
