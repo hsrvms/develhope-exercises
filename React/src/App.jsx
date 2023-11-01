@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Clock from './components/Clock/Clock'
 import TodoList from "./components/TodoList/TodoList";
 import UncontrolledLogin from './components/UncontrolledLogin'
+import Container from './components/Container';
 
 import "./App.css";
 
@@ -61,6 +62,9 @@ const App = () => {
 				handleChange={handleChange}
 				handleDelete={handleDelete}
 			/>
+			<Container>
+				<Counter />
+			</Container>
 		</div>
 	);
 };
