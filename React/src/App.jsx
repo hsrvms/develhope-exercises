@@ -6,6 +6,7 @@ import Clock from './components/Clock/Clock'
 import TodoList from "./components/TodoList/TodoList";
 import UncontrolledLogin from './components/UncontrolledLogin'
 import Container from './components/Container';
+import { LanguageContext } from './LanguageContext';
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ const App = () => {
 		"Orange",
 	]);
 	const [inputValue, setInputValue] = useState("");
+	const [language, setLanguage] = useState('en')
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -65,6 +67,10 @@ const App = () => {
 			<Container title="Colapsible">
 				<Counter />
 			</Container>
+
+			<LanguageContext.Provider value={language}>
+				<Clock />
+			</LanguageContext.Provider>
 		</div>
 	);
 };
