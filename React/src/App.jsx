@@ -10,6 +10,7 @@ import Container from './components/Container';
 import "./App.css";
 import GithubUser from './components/GithubUser/GithubUser';
 import GithubUsers from './components/GithubUsers/GithubUsers';
+import ControlledForm from './components/ControlledForm/ControlledForm';
 
 const App = () => {
 	const [items, setItems] = useState([
@@ -81,11 +82,13 @@ const App = () => {
 				<button onClick={() => setLanguage('tr')}>Turkish</button>
 			</div>
 
-				<Clock />
+			<Clock />
 
-				<GithubUser username={selectedUser} />
+			<GithubUser username={selectedUser} />
 
-				<GithubUsers handleSelectUser={handleSelectUser} />
+			<GithubUsers handleSelectUser={handleSelectUser} />
+
+			<ControlledForm />
 		</div>
 	);
 };
