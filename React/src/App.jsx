@@ -9,6 +9,7 @@ import Container from './components/Container';
 
 import "./App.css";
 import GithubUser from './components/GithubUser/GithubUser';
+import GithubUsers from './components/GithubUsers/GithubUsers';
 
 const App = () => {
 	const [items, setItems] = useState([
@@ -50,6 +51,11 @@ const App = () => {
 		});
 	}
 
+	const [selectedUser, setSelectedUser] = useState('hsrvms')
+	function handleSelectUser(username) {
+		setSelectedUser(username)
+	}
+
 	return (
 		<div id="app">
 			<Welcome />
@@ -77,7 +83,9 @@ const App = () => {
 
 				<Clock />
 
-				<GithubUser username={'hsrvms'} />
+				<GithubUser username={selectedUser} />
+
+				<GithubUsers handleSelectUser={handleSelectUser} />
 		</div>
 	);
 };
