@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Welcome from "./components/Welcome";
 import Counter from "./components/Counter";
 import Login from "./components/Login";
@@ -6,11 +7,12 @@ import Clock from './components/Clock/Clock'
 import TodoList from "./components/TodoList/TodoList";
 import UncontrolledLogin from './components/UncontrolledLogin'
 import Container from './components/Container';
-
-import "./App.css";
 import GithubUser from './components/GithubUser/GithubUser';
 import GithubUsers from './components/GithubUsers/GithubUsers';
 import ControlledForm from './components/ControlledForm/ControlledForm';
+import Location from './components/Location'
+
+import "./App.css";
 
 const App = () => {
 	const [items, setItems] = useState([
@@ -57,6 +59,8 @@ const App = () => {
 		setSelectedUser(username)
 	}
 
+	
+
 	return (
 		<div id="app">
 			<Welcome />
@@ -89,6 +93,8 @@ const App = () => {
 			<GithubUsers handleSelectUser={handleSelectUser} />
 
 			<ControlledForm />
+
+			<Location />
 		</div>
 	);
 };
