@@ -1,31 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const useGithubUser = (username) => {
-  const [userData, setUserData] = useState({
-    name: '',
-    avatar: '',
-    login: ''
-  });
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const url = 'https://api.github.com/users';
 
   async function fetchGithubUser() {
+    setLoading(true);
+    setError(null);
+    const url = 'https://api.github.com/users';
 
-    const res = await fetch(`${url}/${username}`);
-    console.log(res.status)
-    const data = await res.json();
-
-    setUserData(
-      {
-        name: data.name,
-        avatar: data.avatar_url,
-        login: data.login
-      }
-    )
+    try {
+      const res = await fetch(`${url}/${username}`);
+      console.log(res.status)
+      const data = await res.json();
+      setUserData(data)
+      setLoading(false)
+    } catch (error) {
+      setError(error)
+      setUserData(null);
+      setLoading(false)
+    }
   }
 
+  useEffect(() => {
+    fetchGithubUser();
+  }, [username])
+
   return {
-    userData, 
-    fetchGithubUser
+    userData,
+    loading,
+    error,
   }
 }
