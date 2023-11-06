@@ -6,9 +6,9 @@ import Clock from './components/Clock/Clock'
 import TodoList from "./components/TodoList/TodoList";
 import UncontrolledLogin from './components/UncontrolledLogin'
 import Container from './components/Container';
-import { LanguageContext } from './LanguageContext';
 
 import "./App.css";
+import GithubUser from './components/GithubUser/GithubUser';
 
 const App = () => {
 	const [items, setItems] = useState([
@@ -76,6 +76,8 @@ const App = () => {
 			</div>
 
 				<Clock />
+
+				<GithubUser username={'hsrvms'} />
 		</div>
 	);
 };
