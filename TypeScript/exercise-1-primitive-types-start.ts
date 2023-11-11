@@ -14,7 +14,7 @@ let visited: boolean = true;
 
 let currency: null = null;
 
-// Change the type annotations on these variables so they are correct.
+// Change the type annotations on these variables so they are correct
 
 let population: number = 47_450_795;
 
