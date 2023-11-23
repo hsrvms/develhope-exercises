@@ -14,8 +14,8 @@ export default function Welcome({ name = "Orlando", age}) {
 		<>
 			<p>
 				Welcome, <strong>{name}!</strong>
-				{isValidAge && <Age age={age} />}
 			</p>
+				{isValidAge && <Age age={age} />}
 		</>
 	);
 }
