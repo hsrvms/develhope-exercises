@@ -5,6 +5,7 @@ import Counter from './components/Counter';
 import ShowGithubUser from './components/ShowGithubUser/ShowGithubUser';
 import GithubUsers from './components/GithubUsers/GithubUsers';
 import PageNotFound from './components/PageNotFound';
+import AddUserMessage from './components/AddUserMessage';
 
 import "./App.css";
 
@@ -16,8 +17,8 @@ const App = () => {
 				<Route path="/" element={<Welcome />} />
 				<Route path="/counter" element={<Counter />} />
 				<Route path="/users" element={<GithubUsers />} >
+					<Route path="index" element={<AddUserMessage />} />
 					<Route path=":username" element={<ShowGithubUser />} />
-					<Route path=":counter" element={<Counter />} />
 				</Route>
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
