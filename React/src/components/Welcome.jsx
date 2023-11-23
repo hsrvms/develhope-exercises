@@ -1,12 +1,6 @@
-function Age({ age }) {
-	return (
-		<>
-			<p>Your age is {age}!</p>
-		</>
-	);
-}
 
-export default function Welcome({ name = "Orlando", age = 23 }) {
+
+export default function Welcome({ name = "Orlando", age}) {
 	return (
 		<>
 			<p>
@@ -15,4 +9,7 @@ export default function Welcome({ name = "Orlando", age = 23 }) {
 				{age > 18 && <Age age={age} />}
 		</>
 	);
+
 }
+
+export default Welcome

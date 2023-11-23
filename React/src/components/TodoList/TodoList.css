@@ -1,0 +1,26 @@
+.list-container {
+	background: burlywood;
+	margin-top: 2rem;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+.list {
+	background-color: green;
+	padding: 1rem;
+	border-radius: 0.875rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0 1rem;
+	border: 2px solid blueviolet;
+	border-radius: 2rem;
+}
