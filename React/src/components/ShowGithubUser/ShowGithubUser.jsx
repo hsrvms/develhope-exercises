@@ -3,7 +3,6 @@ import { useGithubUser } from '../../hooks/useGithubUser';
 const GithubUser = () => {
 
   const { username } = useParams()
-
   const { userData, loading, error } = useGithubUser(username);
 
   return (
