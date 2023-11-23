@@ -3,10 +3,10 @@ import Welcome from './components/Welcome'
 
 
 const App = () => {
-
+	const name = <strong>Husrev</strong>
 	return (
 		<div>
-			<Welcome name={"Husrev"} age={18}/>
+			<Welcome name={name} age={18}/>
 			<Welcome />
 		</div>
 	);
