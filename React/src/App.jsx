@@ -1,10 +1,11 @@
-
 import { Routes, Route, Link } from 'react-router-dom';
 
-import "./App.css";
 import Welcome from './components/Welcome';
 import Counter from './components/Counter';
 import ShowGithubUser from './components/ShowGithubUser/ShowGithubUser';
+import PageNotFound from './components/PageNotFound';
+
+import "./App.css";
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
 				<Route path="/" element={<Welcome />} />
 				<Route path="/counter" element={<Counter />} />
 				<Route path="/users/:username" element={<ShowGithubUser />} />
+				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<div>
 				<Link to="/">Home</Link><br/>
