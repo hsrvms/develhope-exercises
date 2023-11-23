@@ -12,8 +12,8 @@ export default function Welcome({ name = "Orlando", age}) {
 		<>
 			<p>
 				Welcome, <strong>{name}!</strong>
-				<Age age={age} />
 			</p>
+				<Age age={age} />
 		</>
 	);
 }
