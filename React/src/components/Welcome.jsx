@@ -11,8 +11,8 @@ export default function Welcome({ name = "Orlando", age}) {
 		<>
 			<p>
 				Welcome, <strong>{name}!</strong>
-				{age && <Age age={age} />}
 			</p>
+				{age && <Age age={age} />}
 		</>
 	);
 }
