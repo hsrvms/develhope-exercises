@@ -1,5 +1,10 @@
-const doSomething = require('./node-03');
+import doSomething2 from './node-04';
 
-const something = doSomething();
+const something2 = doSomething2();
+console.log(something2)
 
-console.log(something);
+
+// const doSomething = require('./node-03');
+
+// const something = doSomething();
+// console.log(something);
