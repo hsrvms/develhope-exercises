@@ -1,15 +1,15 @@
 
 
-export default function Welcome({ name = "Orlando", age}) {
+const Welcome = ({ name = "Orlando" }) => {
 	return (
 		<>
 			<p>
 				Welcome, <strong>{name}!</strong>
 			</p>
-				{age > 18 && <Age age={age} />}
+			
 		</>
 	);
 
 }
 
-export default Welcome
+export default Welcome;
